@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="#080c18">
+
+    <!-- Script name (tappable) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/bg_section"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="SCRIPT"
+            android:textColor="#546e7a"
+            android:textSize="10sp"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.15" />
+
+        <TextView
+            android:id="@+id/scriptNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="default"
+            android:textColor="#00e676"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:drawableEnd="@android:drawable/arrow_down_float"
+            android:drawablePadding="4dp"
+            android:drawableTint="#546e7a" />
+    </LinearLayout>
+
+    <!-- Primary action row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="6dp">
+
+        <Button
+            android:id="@+id/btnRunScript"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="2"
+            android:text="▶  RUN"
+            android:textAllCaps="false"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:fontFamily="monospace"
+            android:backgroundTint="#00c853"
+            android:layout_marginEnd="6dp" />
+
+        <Button
+            android:id="@+id/btnSaveScript"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:text="Save"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:textColor="#fff"
+            android:backgroundTint="#1565c0"
+            android:layout_marginEnd="6dp" />
+
+        <Button
+            android:id="@+id/btnCoordOverlay"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:text="Coords"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:textColor="#fff"
+            android:backgroundTint="#e65100" />
+    </LinearLayout>
+
+    <!-- Stop button (shown when running) -->
+    <Button
+        android:id="@+id/btnStopScript"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:text="■  STOP SCRIPT"
+        android:textAllCaps="false"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:textColor="#fff"
+        android:fontFamily="monospace"
+        android:backgroundTint="#c62828"
+        android:visibility="gone"
+        android:layout_marginBottom="6dp" />
+
+    <!-- Tool row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp">
+
+        <Button
+            android:id="@+id/btnCommands"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:text="Cmds"
+            android:textAllCaps="false"
+            android:textSize="11sp"
+            android:textColor="#c8d8e8"
+            android:backgroundTint="#1a2540"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/btnHelp"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:text="Help"
+            android:textAllCaps="false"
+            android:textSize="11sp"
+            android:textColor="#c8d8e8"
+            android:backgroundTint="#1a2540"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/btnCommentAll"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:text="// All"
+            android:textAllCaps="false"
+            android:textSize="11sp"
+            android:textColor="#c8d8e8"
+            android:backgroundTint="#1a2540"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/btnUncommentAll"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:text="Uncomment"
+            android:textAllCaps="false"
+            android:textSize="10sp"
+            android:textColor="#c8d8e8"
+            android:backgroundTint="#1a2540" />
+    </LinearLayout>
+
+    <!-- Code editor area -->
+    <EditText
+        android:id="@+id/scriptText"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="top|start"
+        android:inputType="textMultiLine|textNoSuggestions"
+        android:fontFamily="monospace"
+        android:textSize="13sp"
+        android:textColor="#a8f0b8"
+        android:background="@drawable/bg_log_area"
+        android:padding="12dp"
+        android:hint="open com.android.vending&#10;wait 3000&#10;tap 534 1614&#10;text you@gmail.com"
+        android:textColorHint="#1a4025" />
+
+    <!-- Command quick-reference -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="open · close · link · tap · click · swipe · scroll · text · key · wait · detect · dump · if/else/endif"
+        android:textColor="#1e3848"
+        android:textSize="10sp"
+        android:fontFamily="monospace"
+        android:paddingTop="5dp" />
+
+</LinearLayout>

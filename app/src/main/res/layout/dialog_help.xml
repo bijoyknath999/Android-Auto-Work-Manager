@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#080c18"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SCRIPT COMMANDS"
+            android:textColor="#00e676"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:letterSpacing="0.15"
+            android:paddingBottom="14dp" />
+
+        <!-- OPEN / CLOSE -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="OPEN / CLOSE" android:textColor="#00b4ff" android:textSize="11sp"
+            android:textStyle="bold" android:fontFamily="monospace" android:letterSpacing="0.12"
+            android:paddingTop="6dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="open com.app.package\n  Launch app in selected work profile\n\nclose com.app.package\n  Force-stop an app"
+            android:textColor="#a8f0b8" android:textSize="12sp" android:fontFamily="monospace"
+            android:paddingTop="4dp" android:paddingBottom="6dp" />
+
+        <!-- LINK -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="LINK" android:textColor="#00b4ff" android:textSize="11sp"
+            android:textStyle="bold" android:fontFamily="monospace" android:letterSpacing="0.12"
+            android:paddingTop="6dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="link https://url com.app\n  Open URL in a specific app"
+            android:textColor="#a8f0b8" android:textSize="12sp" android:fontFamily="monospace"
+            android:paddingTop="4dp" android:paddingBottom="6dp" />
+
+        <!-- TAP / SWIPE -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="TAP / SWIPE" android:textColor="#00b4ff" android:textSize="11sp"
+            android:textStyle="bold" android:fontFamily="monospace" android:letterSpacing="0.12"
+            android:paddingTop="6dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="tap 534 1614\n  Tap at X,Y coordinates\n\nswipe 100 500 100 1500 300\n  Swipe (x1 y1 x2 y2 durationMs)"
+            android:textColor="#a8f0b8" android:textSize="12sp" android:fontFamily="monospace"
+            android:paddingTop="4dp" android:paddingBottom="6dp" />
+
+        <!-- CLICK -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="CLICK  (accessibility)" android:textColor="#00b4ff" android:textSize="11sp"
+            android:textStyle="bold" android:fontFamily="monospace" android:letterSpacing="0.12"
+            android:paddingTop="6dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="click Install\n  Tap button by its visible text label"
+            android:textColor="#a8f0b8" android:textSize="12sp" android:fontFamily="monospace"
+            android:paddingTop="4dp" android:paddingBottom="6dp" />
+
+        <!-- SCROLL -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="SCROLL" android:textColor="#00b4ff" android:textSize="11sp"
+            android:textStyle="bold" android:fontFamily="monospace" android:letterSpacing="0.12"
+            android:paddingTop="6dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="scroll down\n  Scroll down once\n\nscroll up 3\n  Scroll up 3 times\n\nscroll down 5 800\n  Down 5 times, 800 px each"
+            android:textColor="#a8f0b8" android:textSize="12sp" android:fontFamily="monospace"
+            android:paddingTop="4dp" android:paddingBottom="6dp" />
+
+        <!-- TEXT INPUT -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="TEXT INPUT" android:textColor="#00b4ff" android:textSize="11sp"
+            android:textStyle="bold" android:fontFamily="monospace" android:letterSpacing="0.12"
+            android:paddingTop="6dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="text hello world\n  Type text + press Enter\n\nunfocus\n  Dismiss keyboard / unfocus field"
+            android:textColor="#a8f0b8" android:textSize="12sp" android:fontFamily="monospace"
+            android:paddingTop="4dp" android:paddingBottom="6dp" />
+
+        <!-- WAIT / DETECT -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="WAIT / DETECT" android:textColor="#00b4ff" android:textSize="11sp"
+            android:textStyle="bold" android:fontFamily="monospace" android:letterSpacing="0.12"
+            android:paddingTop="6dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="wait 3000\n  Pause 3 seconds\n\ndetect Sign in\n  Wait up to 15 s for text on screen"
+            android:textColor="#a8f0b8" android:textSize="12sp" android:fontFamily="monospace"
+            android:paddingTop="4dp" android:paddingBottom="6dp" />
+
+        <!-- CONDITIONAL -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="CONDITIONAL  (if / else / endif)" android:textColor="#00b4ff"
+            android:textSize="11sp" android:textStyle="bold" android:fontFamily="monospace"
+            android:letterSpacing="0.12" android:paddingTop="6dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="if Install\n  tap 534 1614\nelse\n  scroll down\n  tap 534 1614\nendif\n\nChecks if text is visible on screen"
+            android:textColor="#a8f0b8" android:textSize="12sp" android:fontFamily="monospace"
+            android:paddingTop="4dp" android:paddingBottom="6dp" />
+
+        <!-- KEYS -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="KEYS" android:textColor="#00b4ff" android:textSize="11sp"
+            android:textStyle="bold" android:fontFamily="monospace" android:letterSpacing="0.12"
+            android:paddingTop="6dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="key back    — press Back button\nkey home    — press Home button\nkey enter   — press Enter / Return key"
+            android:textColor="#a8f0b8" android:textSize="12sp" android:fontFamily="monospace"
+            android:paddingTop="4dp" android:paddingBottom="6dp" />
+
+        <!-- UI DUMP -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="UI DUMP" android:textColor="#00b4ff" android:textSize="11sp"
+            android:textStyle="bold" android:fontFamily="monospace" android:letterSpacing="0.12"
+            android:paddingTop="6dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="dump\n  Log all UI elements with coordinates\n  Shows: text, bounds, center X,Y, clickable"
+            android:textColor="#a8f0b8" android:textSize="12sp" android:fontFamily="monospace"
+            android:paddingTop="4dp" android:paddingBottom="6dp" />
+
+        <!-- COMMENTS -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="COMMENTS" android:textColor="#00b4ff" android:textSize="11sp"
+            android:textStyle="bold" android:fontFamily="monospace" android:letterSpacing="0.12"
+            android:paddingTop="6dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="# this is a comment\n// this is also a comment"
+            android:textColor="#a8f0b8" android:textSize="12sp" android:fontFamily="monospace"
+            android:paddingTop="4dp" android:paddingBottom="6dp" />
+
+        <!-- COORDS -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="COORDS OVERLAY" android:textColor="#00b4ff" android:textSize="11sp"
+            android:textStyle="bold" android:fontFamily="monospace" android:letterSpacing="0.12"
+            android:paddingTop="6dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Tap Coords button → overlay opens\nTap screen → shows X,Y\n+ Tap → insert tap X Y into script\nUI Dump → log all clickable elements\nHide → minimize to small icon\nClose → exit overlay"
+            android:textColor="#a8f0b8" android:textSize="12sp" android:fontFamily="monospace"
+            android:paddingTop="4dp" android:paddingBottom="6dp" />
+
+        <!-- SCRIPTS -->
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="MULTIPLE SCRIPTS" android:textColor="#00b4ff" android:textSize="11sp"
+            android:textStyle="bold" android:fontFamily="monospace" android:letterSpacing="0.12"
+            android:paddingTop="6dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Tap script name at the top\n→ create / switch / rename / delete"
+            android:textColor="#a8f0b8" android:textSize="12sp" android:fontFamily="monospace"
+            android:paddingTop="4dp" android:paddingBottom="16dp" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_connect"
+        android:icon="@android:drawable/ic_menu_share"
+        android:title="Connect" />
+    <item
+        android:id="@+id/nav_profiles"
+        android:icon="@android:drawable/ic_menu_myplaces"
+        android:title="Profiles" />
+    <item
+        android:id="@+id/nav_apps"
+        android:icon="@android:drawable/ic_menu_manage"
+        android:title="Apps" />
+    <item
+        android:id="@+id/nav_script"
+        android:icon="@android:drawable/ic_menu_edit"
+        android:title="Script" />
+    <item
+        android:id="@+id/nav_logs"
+        android:icon="@android:drawable/ic_menu_agenda"
+        android:title="Logs" />
+</menu>

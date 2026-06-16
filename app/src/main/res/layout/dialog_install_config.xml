@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/searchInput"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Search apps…"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:background="@drawable/bg_input"
+        android:textColor="#c8d8e8"
+        android:textColorHint="#2a4060"
+        android:textSize="13sp"
+        android:fontFamily="monospace"
+        android:inputType="text"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="8dp" />
+
+    <ListView
+        android:id="@+id/configAppList"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:divider="#0d2030"
+        android:dividerHeight="1dp" />
+
+</LinearLayout>

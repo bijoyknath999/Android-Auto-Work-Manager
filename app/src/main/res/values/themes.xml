@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.WorkManager" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#00e676</item>
+        <item name="colorPrimaryVariant">#00b248</item>
+        <item name="colorOnPrimary">#000000</item>
+        <item name="colorSecondary">#00b4ff</item>
+        <item name="colorOnSecondary">#000000</item>
+        <item name="android:statusBarColor">#060a14</item>
+        <item name="android:navigationBarColor">#060a14</item>
+        <item name="android:windowBackground">#080c18</item>
+        <item name="materialAlertDialogTheme">@style/WorkManager.Dialog</item>
+    </style>
+
+    <!-- Dark hacker-themed alert dialog -->
+    <style name="WorkManager.Dialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="colorSurface">#0d1530</item>
+        <item name="colorOnSurface">#c8d8e8</item>
+        <item name="colorPrimary">#00e676</item>
+        <item name="android:textColorPrimary">#c8d8e8</item>
+        <item name="android:textColorSecondary">#546e7a</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/WorkManager.Dialog.Title</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/WorkManager.Dialog.Body</item>
+        <item name="buttonBarPositiveButtonStyle">@style/WorkManager.Dialog.Btn.Positive</item>
+        <item name="buttonBarNegativeButtonStyle">@style/WorkManager.Dialog.Btn.Negative</item>
+        <item name="buttonBarNeutralButtonStyle">@style/WorkManager.Dialog.Btn.Neutral</item>
+    </style>
+
+    <style name="WorkManager.Dialog.Title" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textColor">#00e676</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:letterSpacing">0.08</item>
+    </style>
+
+    <style name="WorkManager.Dialog.Body" parent="MaterialAlertDialog.MaterialComponents.Body.Text">
+        <item name="android:textColor">#c8d8e8</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:lineSpacingMultiplier">1.4</item>
+    </style>
+
+    <style name="WorkManager.Dialog.Btn.Positive" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">#00e676</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="WorkManager.Dialog.Btn.Negative" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">#546e7a</item>
+        <item name="android:fontFamily">monospace</item>
+    </style>
+
+    <style name="WorkManager.Dialog.Btn.Neutral" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">#00b4ff</item>
+        <item name="android:fontFamily">monospace</item>
+    </style>
+</resources>

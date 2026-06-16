@@ -1,0 +1,52 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.workmanager.app'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.workmanager.app"
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
+
+    // ADB connection + wireless pairing, same library used by adb-auto-enable.
+    // Implements the ADB wire protocol, STLS/TLS 1.3 and SPAKE2 pairing for us.
+    implementation 'com.github.MuntashirAkon:libadb-android:1.0.1'
+
+    // TLS 1.3 + RFC 5705 keying material that libadb's pairing relies on.
+    implementation 'org.conscrypt:conscrypt-android:2.5.2'
+
+    // BouncyCastle: self-signed certificate generation for the ADB key.
+    implementation 'org.bouncycastle:bcprov-jdk15on:1.70'
+    implementation 'org.bouncycastle:bcpkix-jdk15on:1.70'
+}

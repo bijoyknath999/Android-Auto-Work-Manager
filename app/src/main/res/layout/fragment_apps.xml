@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="#080c18">
+
+    <!-- Selected profile pill -->
+    <TextView
+        android:id="@+id/selectedProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No profile selected — pick one in Profiles"
+        android:textColor="#ff8c00"
+        android:textSize="12sp"
+        android:fontFamily="monospace"
+        android:padding="10dp"
+        android:background="@drawable/bg_card"
+        android:layout_marginBottom="10dp" />
+
+    <!-- Install actions section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_section"
+        android:padding="12dp"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="▸ INSTALL TO PROFILE"
+            android:textColor="#00b4ff"
+            android:textSize="10sp"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.10"
+            android:layout_marginBottom="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="6dp">
+
+            <Button
+                android:id="@+id/btnAddGms"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:text="Install Default Apps"
+                android:textAllCaps="false"
+                android:textSize="12sp"
+                android:textColor="#000"
+                android:backgroundTint="#00c853"
+                android:layout_marginEnd="6dp" />
+
+            <Button
+                android:id="@+id/btnConfigureInstall"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:text="⚙"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textColor="#c8d8e8"
+                android:backgroundTint="#1a2540" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnInstallApk"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:text="Install APK / XAPK from storage"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:textColor="#fff"
+            android:backgroundTint="#1565c0"
+            android:layout_marginBottom="6dp" />
+
+        <Button
+            android:id="@+id/btnOpenInProfile"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:text="Open app in profile"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:textColor="#fff"
+            android:backgroundTint="#1a2540" />
+    </LinearLayout>
+
+    <!-- App list section — grows to fill remaining space -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@drawable/bg_section"
+        android:padding="12dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="▸ DEVICE APPS — tap to select, then install"
+            android:textColor="#00b4ff"
+            android:textSize="10sp"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.10"
+            android:layout_marginBottom="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <Button
+                android:id="@+id/btnLoadApps"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="Load Apps"
+                android:textAllCaps="false"
+                android:textSize="11sp"
+                android:textColor="#c8d8e8"
+                android:backgroundTint="#263238"
+                android:layout_marginEnd="6dp" />
+
+            <Button
+                android:id="@+id/btnInstallToProfile"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="Install Selected"
+                android:textAllCaps="false"
+                android:textSize="11sp"
+                android:textColor="#000"
+                android:backgroundTint="#00b248" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/appList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_log_area"
+
+            android:divider="#0d2030"
+            android:dividerHeight="1dp" />
+    </LinearLayout>
+
+</LinearLayout>

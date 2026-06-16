@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#080c18"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="14dp">
+
+        <!-- Status pill -->
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tap Pair to connect"
+            android:textSize="13sp"
+            android:textColor="#ff8c00"
+            android:fontFamily="monospace"
+            android:padding="12dp"
+            android:background="@drawable/bg_card"
+            android:layout_marginBottom="14dp" />
+
+        <!-- ── WiFi Pair Section ─────────────────────────────── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_section"
+            android:padding="14dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="▸ WIRELESS PAIR"
+                android:textColor="#00b4ff"
+                android:textSize="11sp"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.10"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp" />
+
+            <EditText
+                android:id="@+id/pairCodeInput"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Pairing code — 6 digits"
+                android:inputType="number"
+                android:textColor="#c8d8e8"
+                android:textColorHint="#3a5060"
+                android:textSize="14sp"
+                android:fontFamily="monospace"
+                android:background="@drawable/bg_input"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/pairPortInput"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="Pair / connect port"
+                android:inputType="number"
+                android:textColor="#c8d8e8"
+                android:textColorHint="#3a5060"
+                android:textSize="14sp"
+                android:fontFamily="monospace"
+                android:background="@drawable/bg_input"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:layout_marginBottom="12dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnPair"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:text="Pair + Connect"
+                    android:textAllCaps="false"
+                    android:textSize="12sp"
+                    android:textColor="#000"
+                    android:backgroundTint="#00c853"
+                    android:layout_marginEnd="6dp" />
+
+                <Button
+                    android:id="@+id/btnConnect"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:text="Connect"
+                    android:textAllCaps="false"
+                    android:textSize="12sp"
+                    android:textColor="#fff"
+                    android:backgroundTint="#1565c0" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ── Auto Pair Section ─────────────────────────────── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_section"
+            android:padding="14dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="▸ AUTO PAIR"
+                android:textColor="#00b4ff"
+                android:textSize="11sp"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.10"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reads the pairing dialog for you — no typing needed"
+                android:textColor="#546e7a"
+                android:textSize="11sp"
+                android:layout_marginBottom="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnFloatingPair"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:text="Auto Pair"
+                    android:textAllCaps="false"
+                    android:textSize="12sp"
+                    android:textColor="#fff"
+                    android:backgroundTint="#6a1b9a"
+                    android:layout_marginEnd="6dp" />
+
+                <Button
+                    android:id="@+id/btnBootHelp"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:text="Boot Setup"
+                    android:textAllCaps="false"
+                    android:textSize="12sp"
+                    android:textColor="#fff"
+                    android:backgroundTint="#263238" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ── USB Section ───────────────────────────────────── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_section"
+            android:padding="14dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="▸ USB — NO WIFI NEEDED"
+                android:textColor="#00b4ff"
+                android:textSize="11sp"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.10"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. Connect USB cable\n2. Run on PC: adb tcpip 5555\n3. Enter port → Connect"
+                android:textColor="#546e7a"
+                android:textSize="11sp"
+                android:fontFamily="monospace"
+                android:layout_marginBottom="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/usbPortInput"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:hint="Port (5555)"
+                    android:inputType="number"
+                    android:textColor="#c8d8e8"
+                    android:textColorHint="#3a5060"
+                    android:textSize="14sp"
+                    android:fontFamily="monospace"
+                    android:background="@drawable/bg_input"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:layout_marginEnd="8dp" />
+
+                <Button
+                    android:id="@+id/btnUsbConnect"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:text="Connect USB"
+                    android:textAllCaps="false"
+                    android:textSize="12sp"
+                    android:textColor="#000"
+                    android:backgroundTint="#00e676" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

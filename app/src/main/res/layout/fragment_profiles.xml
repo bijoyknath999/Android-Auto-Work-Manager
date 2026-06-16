@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="#080c18">
+
+    <!-- Status text -->
+    <TextView
+        android:id="@+id/profileStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Work profiles managed here"
+        android:textColor="#546e7a"
+        android:textSize="12sp"
+        android:fontFamily="monospace"
+        android:background="@drawable/bg_section"
+        android:padding="10dp"
+        android:layout_marginBottom="10dp" />
+
+    <!-- Action row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp">
+
+        <Button
+            android:id="@+id/btnRefresh"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:text="↺ Refresh"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:textColor="#c8d8e8"
+            android:backgroundTint="#1a2540"
+            android:layout_marginEnd="5dp" />
+
+        <Button
+            android:id="@+id/btnCreateProfile"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:text="+ Create"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:textColor="#000"
+            android:backgroundTint="#00c853"
+            android:layout_marginEnd="5dp" />
+
+        <Button
+            android:id="@+id/btnRemoveProfile"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:text="✕ Remove"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:textColor="#fff"
+            android:backgroundTint="#c62828" />
+    </LinearLayout>
+
+    <!-- DPC provision button -->
+    <Button
+        android:id="@+id/btnProvisionDpc"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:text="Set up Work Profile  (DPC + launcher icons)"
+        android:textAllCaps="false"
+        android:textSize="12sp"
+        android:textColor="#fff"
+        android:backgroundTint="#4527a0"
+        android:layout_marginBottom="10dp" />
+
+    <!-- List label -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="▸ PROFILES — tap to select"
+        android:textColor="#00b4ff"
+        android:textSize="10sp"
+        android:fontFamily="monospace"
+        android:letterSpacing="0.10"
+        android:paddingBottom="6dp" />
+
+    <!-- Profile list -->
+    <ListView
+        android:id="@+id/userList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_log_area"
+        android:divider="#0d2030"
+        android:dividerHeight="1dp"
+        android:padding="4dp" />
+
+</LinearLayout>

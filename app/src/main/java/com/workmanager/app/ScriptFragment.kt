@@ -178,7 +178,7 @@ class ScriptFragment : Fragment(R.layout.fragment_script) {
             toast("Connect to ADB first (use the Connect tab)")
             return
         }
-        if (Session.selectedUserId <= 0) {
+        if (Session.selectedUserId < 0) {
             toast("Select a work profile first (Profiles tab)")
             return
         }
@@ -296,7 +296,7 @@ class ScriptFragment : Fragment(R.layout.fragment_script) {
     private fun pickAppForOpen() {
         if (!Session.connected) { toast("Connect to ADB first"); return }
         val userId = Session.selectedUserId
-        if (userId <= 0) { toast("Select a work profile first (Profiles tab)"); return }
+        if (userId < 0) { toast("Select a work profile first (Profiles tab)"); return }
         lifecycleScope.launch {
             toast("Loading apps…")
             val pkgs = withContext(Dispatchers.IO) { Session.profiles.listLaunchableApps(userId) }
@@ -309,7 +309,7 @@ class ScriptFragment : Fragment(R.layout.fragment_script) {
     private fun pickAppForClose() {
         if (!Session.connected) { toast("Connect to ADB first"); return }
         val userId = Session.selectedUserId
-        if (userId <= 0) { toast("Select a work profile first (Profiles tab)"); return }
+        if (userId < 0) { toast("Select a work profile first (Profiles tab)"); return }
         lifecycleScope.launch {
             toast("Loading apps…")
             val pkgs = withContext(Dispatchers.IO) { Session.profiles.listLaunchableApps(userId) }
@@ -322,7 +322,7 @@ class ScriptFragment : Fragment(R.layout.fragment_script) {
     private fun pickAppForLink() {
         if (!Session.connected) { toast("Connect to ADB first"); return }
         val userId = Session.selectedUserId
-        if (userId <= 0) { toast("Select a work profile first"); return }
+        if (userId < 0) { toast("Select a work profile first"); return }
         lifecycleScope.launch {
             toast("Loading apps…")
             val pkgs = withContext(Dispatchers.IO) { Session.profiles.listLaunchableApps(userId) }

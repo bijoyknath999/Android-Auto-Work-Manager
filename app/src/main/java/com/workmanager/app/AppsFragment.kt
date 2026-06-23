@@ -64,12 +64,12 @@ class AppsFragment : Fragment(R.layout.fragment_apps) {
 
     private fun updateSelected() {
         val id = Session.selectedUserId
-        selected.text = if (id > 0) "Profile: $id  — tap Load Apps to see installed" else "No profile selected — pick one in Profiles"
+        selected.text = if (id >= 0) "Profile: $id  — tap Load Apps to see installed" else "No profile selected — pick one in Profiles"
     }
 
     private fun require(): Boolean {
         if (!Session.connected) { toast("Not connected"); return false }
-        if (Session.selectedUserId <= 0) { toast("Select a profile in Profiles tab"); return false }
+        if (Session.selectedUserId < 0) { toast("Select a profile in Profiles tab"); return false }
         return true
     }
 

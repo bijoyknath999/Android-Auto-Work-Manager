@@ -63,8 +63,9 @@ class ProfilesFragment : Fragment(R.layout.fragment_profiles) {
         view.findViewById<Button>(R.id.btnCreateProfile).setOnClickListener { showCreateDialog() }
         view.findViewById<Button>(R.id.btnRemoveProfile).setOnClickListener {
             val id = Session.selectedUserId
-            if (id > 0 && id != 999) showRemoveDialog(id)
-            else toast("Select a profile first")
+            if (id < 0) { toast("Select a profile first"); return@setOnClickListener }
+            if (id == 0 || id == 999) { toast("System profile (ID: $id) cannot be removed"); return@setOnClickListener }
+            showRemoveDialog(id)
         }
 
         if (Session.connected) refresh() else status.text = "Not connected — connect first"
@@ -81,16 +82,17 @@ class ProfilesFragment : Fragment(R.layout.fragment_profiles) {
     }
 
     private fun updateUserList(out: String) {
-        users = Session.profiles.parseUsers(out).filter { it.id != 0 && it.id != 999 }
+        users = Session.profiles.parseUsers(out)
         adapter.clear()
         if (users.isEmpty()) {
             adapter.add("No profiles — tap + Create")
-            status.text = "No profiles (besides owner / dual-apps)"
+            status.text = "No profiles found"
         } else {
             users.forEach { u ->
-                adapter.add("💼 ${u.name} (ID: ${u.id})${if (u.isRunning) " • running" else ""}")
+                val systemTag = if (u.id == 0 || u.id == 999) " 🔒 system" else ""
+                adapter.add("💼 ${u.name} (ID: ${u.id})${if (u.isRunning) " • running" else ""}$systemTag")
             }
-            status.text = "${users.size} profile(s) — selected: ${if (Session.selectedUserId > 0) Session.selectedUserId else "none"}"
+            status.text = "${users.size} profile(s) — selected: ${if (Session.selectedUserId >= 0) Session.selectedUserId else "none"}"
         }
     }
 

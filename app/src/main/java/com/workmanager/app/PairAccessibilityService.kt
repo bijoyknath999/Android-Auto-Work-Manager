@@ -3,6 +3,7 @@ package com.workmanager.app
 import android.accessibilityservice.AccessibilityService
 import android.accessibilityservice.GestureDescription
 import android.graphics.Path
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -131,15 +132,30 @@ class PairAccessibilityService : AccessibilityService() {
         return ok
     }
 
+    /**
+     * Returns the live root of the foreground window, bypassing the stale
+     * AccessibilityNodeInfo cache. Without this, `rootInActiveWindow` (and the
+     * `getChild()` traversal) can hand back the *previous* screen's nodes right
+     * after a navigation, so `dump`/`if`/`detect` would see the old page.
+     */
+    private fun freshRoot(): AccessibilityNodeInfo? {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            try { clearCache() } catch (_: Throwable) {}
+        }
+        val root = rootInActiveWindow ?: return null
+        try { root.refresh() } catch (_: Throwable) {}
+        return root
+    }
+
     /** All visible text on the current screen (for `detect`). */
     fun currentScreenText(): String {
-        val root = rootInActiveWindow ?: return ""
+        val root = freshRoot() ?: return ""
         return StringBuilder().also { collectText(root, it) }.toString()
     }
 
     /** Dump all elements with their text, bounds, and class. */
     fun dumpElements(): String {
-        val root = rootInActiveWindow ?: return "(no accessibility)"
+        val root = freshRoot() ?: return "(no accessibility)"
         val sb = StringBuilder()
         dumpNode(root, sb, 0)
         return sb.toString()
@@ -166,7 +182,7 @@ class PairAccessibilityService : AccessibilityService() {
 
     /** Find all clickable nodes and return their text/contentDescription. */
     fun findClickableLabels(): List<String> {
-        val root = rootInActiveWindow ?: return emptyList()
+        val root = freshRoot() ?: return emptyList()
         val labels = mutableListOf<String>()
         collectClickable(root, labels)
         return labels.distinct()
@@ -186,7 +202,7 @@ class PairAccessibilityService : AccessibilityService() {
 
     /** Click a node whose text or contentDescription matches [label]. */
     fun clickByLabel(label: String): Boolean {
-        val root = rootInActiveWindow ?: return false
+        val root = freshRoot() ?: return false
         val node = findNodeByLabel(root, label) ?: return false
         val ok = node.performAction(AccessibilityNodeInfo.ACTION_CLICK)
         if (!ok) {

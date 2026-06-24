@@ -246,7 +246,6 @@ class ScriptRunnerService : Service() {
                     "text" -> {
                         val s = line.substringAfter("text").trim()
                         val r = Session.adb.exec("input text '${s.replace("'", "\\'")}'")
-                        Session.adb.exec("input keyevent 66") // Enter
                         AppLogger.log("SCRIPT", "text \"$s\" -> ${r.take(60)}")
                     }
                     "wait" -> {
